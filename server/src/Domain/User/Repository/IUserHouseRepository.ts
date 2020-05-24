@@ -4,7 +4,10 @@ import {House} from 'src/Domain/House/House.entity';
 
 export interface IUserHouseRepository {
   save(user: UserHouse): Promise<UserHouse>;
-  findOneByUserAndHouse(user: User, house: House): Promise<UserHouse | null>;
+  findOneByUserAndHouse(
+    user: User,
+    house: House
+  ): Promise<UserHouse | undefined>;
   findOneByUserHouseRole(
     user: User,
     house: House,

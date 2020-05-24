@@ -1,7 +1,7 @@
-import { User } from '../User.entity';
+import {User} from '../User.entity';
 
 export interface IUserRepository {
-  findOneByApiToken(apiToken: string): Promise<User | null>;
-  findOneByEmail(email: string): Promise<User | null>;
+  findOneByApiToken(apiToken: string): Promise<User | undefined>;
+  findOneByEmail(email: string): Promise<User | undefined>;
   save(user: User): Promise<User>;
 }

@@ -39,7 +39,7 @@ database-migrate: ## Database migrations
 database-diff: ## Generate database diff
 	${exec} api npm run migration:diff $(MIGRATION_NAME)
 database-connect: ## Connect to the database container
-	${exec} database psql -h database
+	${exec} database psql -h database -d edgar
 ci: ## Run CI checks
 	${run} api npm run test:cov
 	${run} api npm run lint

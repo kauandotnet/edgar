@@ -13,12 +13,11 @@ async function bootstrap() {
 
   const options = new DocumentBuilder()
     .setTitle('Edgar')
-    .setBasePath('api')
     .setDescription(
       'Personal assistant which helps you to manage your house(s)'
     )
     .setVersion('1.0.0')
-    //.addBearerAuth('Authorization', 'header')
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, options);

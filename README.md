@@ -1,13 +1,13 @@
 <h1 align="center"><a href="https://fairness.coop"><img src="https://fairness.coop/image/fairness_logo.svg" alt="Fairness"></a></h1>
 
-Permacoop is an eco-design and open-source ERP solution for cooperatives.
+Personal assistant which helps you to manage your house(s).
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/fairnesscoop/permacoop/CI)
-[![codecov](https://codecov.io/gh/fairnesscoop/permacoop/branch/master/graph/badge.svg)](https://codecov.io/gh/fairnesscoop/permacoop)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fairnesscoop/permacoop/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fairnesscoop/permacoop/?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3bf4f001d4904cdb89e71f2793d1c6b7)](https://www.codacy.com/gh/fairnesscoop/permacoop?utm_source=github.com&utm_medium=referral&utm_content=fairnesscoop/permacoop&utm_campaign=Badge_Grade)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/fairnesscoop/permacoop)
-[![GitHub license](https://img.shields.io/github/license/fairnesscoop/permacoop.svg)](https://github.com/fairnesscoop/permacoop)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mmarchois/edgar/CI)
+[![codecov](https://codecov.io/gh/mmarchois/edgar/branch/master/graph/badge.svg)](https://codecov.io/gh/mmarchois/edgar)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mmarchois/edgar/badges/quality-score.png?b=master&s=242ca3f15e9b3b14cbd1ef6358e091b062d4b344)](https://scrutinizer-ci.com/g/mmarchois/edgar/?branch=master)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/31a537f374d643178c2826d3defdac5a)](https://www.codacy.com/manual/mmarchois/edgar?utm_source=github.com&utm_medium=referral&utm_content=mmarchois/edgar&utm_campaign=Badge_Grade)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/mmarchois/edgar)
+[![GitHub license](https://img.shields.io/github/license/mmarchois/edgar.svg)](https://github.com/mmarchois/edgar)
 
 ## Technical stack
 
@@ -35,7 +35,6 @@ For the **next times** you just need to execute this command to start your appli
 
 ```bash
 make start
-
 ```
 
 The server and client will be started:
@@ -46,15 +45,6 @@ The server and client will be started:
 ## Security
 
 The client must send the user `apiToken` in the Authorization header when making requests to protected resources : `Authorization: Bearer <apiToken>`
-
-At the installation of the project a default user was created :
-
-```json
-{
-  "email": "john@doe.com",
-  "password": "john"
-}
-```
 
 To retrieve the `apiToken`, make a post request on `/login` with a user email and password.
 
@@ -74,21 +64,6 @@ Run the unit test suite with this following command:
 make test
 ```
 
-## Features
-
-- Tasks management
-- Projects management
-- Customers management
-- Calendar (timesheets etc.)
-- Human Resources
-  - Pay libs
-  - Holidays
-  - Cooperators / employee
-- Accounting
-  - Quotations
-  - Daily rates
-  - Invoicing
-
 ## Credits
 
-Created by [Fairness](https://fairness.coop)
+Created by [Mathieu MARCHOIS](https://github.com/mmarchois)
