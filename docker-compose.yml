@@ -2,19 +2,18 @@ version: '3'
 
 volumes:
   database: {}
-  uploads: {}
 
 services:
   database:
     image: postgres:11.6
     environment:
-      POSTGRES_USER: permacoop
-      POSTGRES_PASSWORD: permacoop
-      POSTGRES_DB: permacoop
-      PGUSER: permacoop
-      PGPASSWORD: permacoop
+      POSTGRES_USER: edgar
+      POSTGRES_PASSWORD: edgar
+      POSTGRES_DB: edgar
+      PGUSER: edgar
+      PGPASSWORD: edgar
     ports:
-      - '5432:5432'
+      - '5433:5432'
     volumes:
       - 'database:/var/lib/postgresql/data'
 
@@ -25,7 +24,6 @@ services:
       - database
     volumes:
       - './server:/var/www:cached'
-      - 'uploads:/var/www/uploads'
     ports:
       - 8080:3000
     command: npm run start:dev

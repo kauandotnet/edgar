@@ -14,13 +14,8 @@ export class Voucher {
   @Column({type: 'varchar', nullable: false})
   private username: string;
 
-  @Column({
-    type: 'enum',
-    enum: Roles,
-    default: Roles.OWNER,
-    nullable: false
-  })
-  private role: string;
+  @Column('enum', {enum: Roles, nullable: false})
+  private role: Roles;
 
   @ManyToOne(type => House, {onDelete: 'CASCADE', nullable: false})
   private house: House;
@@ -29,5 +24,47 @@ export class Voucher {
   private user: User;
 
   @Column({type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
-  private createdAt: Date;
+  private createdAt: string;
+
+  constructor(
+    code: string,
+    username: string,
+    role: Roles,
+    house: House,
+    user: User
+  ) {
+    this.code = code;
+    this.username = username;
+    this.role = role;
+    this.house = house;
+    this.user = user;
+  }
+
+  public getId(): string {
+    return this.id;
+  }
+
+  public getCode(): string {
+    return this.code;
+  }
+
+  public getUsername(): string {
+    return this.username;
+  }
+
+  public getRole(): Roles {
+    return this.role;
+  }
+
+  public getUser(): User {
+    return this.user;
+  }
+
+  public getHouse(): House {
+    return this.house;
+  }
+
+  public getCreatedAt(): string {
+    return this.createdAt;
+  }
 }

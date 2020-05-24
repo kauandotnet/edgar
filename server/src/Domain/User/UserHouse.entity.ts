@@ -12,12 +12,8 @@ export class UserHouse {
   @PrimaryGeneratedColumn('uuid')
   private id: string;
 
-  @Column({
-    type: 'enum',
-    enum: Roles,
-    default: Roles.OWNER
-  })
-  private role: string;
+  @Column('enum', {enum: Roles, nullable: false})
+  private role: Roles;
 
   @ManyToOne(type => House, {nullable: false})
   house: House;
@@ -27,4 +23,26 @@ export class UserHouse {
 
   @Column({type: 'timestamp', default: () => 'CURRENT_TIMESTAMP'})
   private createdAt: Date;
+
+  constructor(role: Roles, house: House, user: User) {
+    this.role = role;
+    this.house = house;
+    this.user = user;
+  }
+
+  public getId(): string {
+    return this.id;
+  }
+
+  public getRole(): Roles {
+    return this.role;
+  }
+
+  public getHouse(): House {
+    return this.house;
+  }
+
+  public getUser(): User {
+    return this.user;
+  }
 }

@@ -8,7 +8,6 @@ logs = ${compose} logs -f
 
 install: ## Install API and client
 	cp server/ormconfig.json.dist server/ormconfig.json
-	cp server/.env.dist server/.env
 	docker run -it --rm -v ${PWD}/server:/app -w /app node npm i
 	make start
 	make api-build-dist
@@ -23,7 +22,6 @@ start: ## Start docker containers
 	${compose} up -d
 test: ## Run test suite
 	${exec} api npm run test
-	${exec} client npm run test-unit
 linter: ## Linter
 	${exec} api npm run lint
 api-logs: ## Display API logs

@@ -1,11 +1,4 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  JoinTable,
-  ManyToMany
-} from 'typeorm';
-import {UserHouse} from '../User/UserHouse.entity';
+import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
 
 @Entity()
 export class House {
@@ -15,10 +8,15 @@ export class House {
   @Column({type: 'varchar', nullable: false})
   private name: string;
 
-  @ManyToMany(
-    type => UserHouse,
-    userHouse => userHouse.house
-  )
-  @JoinTable()
-  private userHouses: UserHouse[];
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  public getId(): string {
+    return this.id;
+  }
+
+  public getName(): string {
+    return this.name;
+  }
 }
